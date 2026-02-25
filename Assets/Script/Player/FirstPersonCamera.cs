@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour //Se script doit être placer sur la camera du Player
 {
+    public static FirstPersonCamera instance;
     [Tooltip("Ratacher la camera au player")]
     public Transform player;
     public float mouseSensitivity = 2;
@@ -9,8 +10,19 @@ public class FirstPersonCamera : MonoBehaviour //Se script doit être placer sur
 
     [Header("Cursor Settings")] 
     public bool isVisibleCursor;
-    
-    
+
+    void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogError("There is more than one FirstPersonCamera in scene");
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         Cursor.visible = isVisibleCursor;

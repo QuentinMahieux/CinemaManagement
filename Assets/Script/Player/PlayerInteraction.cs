@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, range))
+        if (Physics.Raycast(ray, out hit, range) && !PlayerHand.instance.actualFood)
         {
             if (hit.transform.gameObject.CompareTag("Interactable"))
             {
@@ -40,7 +40,8 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    PlayerHand.instance.TakeFood(lastInteraction.GetFoodData());
+                    PlayerHand.instance.TakeFood(lastInteraction.foodDataKeep.foodData);
+                    lastInteraction.GetStorageBool();
                 }
             }
             else if (lastInteraction)
@@ -48,6 +49,11 @@ public class PlayerInteraction : MonoBehaviour
                 lastInteraction.DesactiveOutLine();
                 lastInteraction = null;
             }
+        }
+        else if  (lastInteraction)
+        {
+            lastInteraction.DesactiveOutLine();
+            lastInteraction = null;
         }
     }
 

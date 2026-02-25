@@ -53,7 +53,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1.07
+    - _Scale: 1.13
     m_Colors:
     - _BlueColor: {r: 0.15669855, g: 0.37210608, b: 0.8742138, a: 1}
     - _Color: {r: 1, g: 0.8245698, b: 0.22327036, a: 1}

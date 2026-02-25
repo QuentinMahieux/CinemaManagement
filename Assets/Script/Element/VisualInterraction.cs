@@ -8,8 +8,9 @@ public class VisualInterraction : MonoBehaviour
     private bool isGlow;
     
     [Header("Storage Settings")]
+    [Tooltip("True: Infini, False: Récupére l'item")]
     public bool isStorage = false;
-    public FoodData foodDataKeep;
+    public DefaultFood foodDataKeep;
     
 
     void Start()
@@ -38,12 +39,13 @@ public class VisualInterraction : MonoBehaviour
         meshRenderer.materials = originalMaterials;
     }
 
-    public FoodData GetFoodData()
+    public void GetStorageBool()
     {
-        if (isStorage)
+        if (!isStorage)
         {
-            return foodDataKeep;
+            SaveObjetManager.instance.listVisualInterraction.Add(this);
+            gameObject.SetActive(false);
         }
-        return null;
+        
     }
 }

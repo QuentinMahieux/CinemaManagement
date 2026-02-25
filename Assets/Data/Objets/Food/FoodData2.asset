@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FoodData2
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
   name: Exemple2
-  prefab: {fileID: 1144033933076949328, guid: 81a9f7b63e32469419b99952b1069a6a, type: 3}
+  prefab: {fileID: 1092834109370394708, guid: 7659d9d922d8fc7488ca5f4e89f38059, type: 3}
