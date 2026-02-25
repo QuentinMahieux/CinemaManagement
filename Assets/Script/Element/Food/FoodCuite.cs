@@ -27,7 +27,7 @@ public class FoodCuite : DefaultFood
 
     private void OnCollisionExit(Collision other)
     {
-        if (isCooking && other.gameObject.CompareTag("Baking Tray"))
+        if (isCooking && !other.gameObject.CompareTag("Baking Tray"))
         {
             isCooking = false;
         }
