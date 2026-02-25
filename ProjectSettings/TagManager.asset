@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Ground
+  - Baking Tray
   layers:
   - Default
   - TransparentFX

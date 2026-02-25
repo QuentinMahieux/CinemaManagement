@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3049704949456854550}
   - component: {fileID: 13751343591764685}
   - component: {fileID: 1316876582329139446}
-  - component: {fileID: 1004115329757654748}
   - component: {fileID: 1752697807390998217}
   - component: {fileID: 3376362203087235459}
+  - component: {fileID: 2941677774230904119}
   - component: {fileID: 891316633460344765}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: SteackCru
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.01552467, z: 0.21}
+  m_LocalScale: {x: 0.28, y: 0.02069956, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 67bd2043080e78d4883e8d52310830ce, type: 2}
+  - {fileID: 2100000, guid: e89fed8ada490944b8f771c2f6318599, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,22 +94,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1004115329757654748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323963127625260304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03b9ccee3e623140ba5c6e449f73220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefaultFood
-  speed: 5
-  rb: {fileID: 3376362203087235459}
-  boxCollider: {fileID: 1752697807390998217}
-  foodData: {fileID: 11400000, guid: 3fb52e0a65e061e4aada8c0740330dc2, type: 2}
 --- !u!65 &1752697807390998217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +142,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2941677774230904119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323963127625260304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769fb7dc887ed4d42836b5dfee7f49ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodCuite
+  speed: 5
+  rb: {fileID: 3376362203087235459}
+  boxCollider: {fileID: 1752697807390998217}
+  foodData: {fileID: 11400000, guid: 2a1693f1bb79a894d8ade8c60bb9efcb, type: 2}
+  meshRenderer: {fileID: 1316876582329139446}
+  newFoodPrefab: {fileID: 8323963127625260304, guid: dc15d7e22d4c53543adac7ee2faa0308, type: 3}
+  timeToHot: 3
+  actualTimeToHot: 0
+  isCooking: 0
 --- !u!114 &891316633460344765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,4 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualInterraction
   meshRenderer: {fileID: 1316876582329139446}
   isStorage: 0
-  foodDataKeep: {fileID: 1004115329757654748}
+  foodDataKeep: {fileID: 2941677774230904119}

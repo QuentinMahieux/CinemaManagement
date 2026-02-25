@@ -6,6 +6,7 @@ public class Package : DefaultFood
 
     public int numberElementSpawn;
     public FoodData elementToSpawn;
+    private bool isDestroyed = false;
     
 
     protected override void OnCollisionEnter(Collision collision)
@@ -14,20 +15,20 @@ public class Package : DefaultFood
         
         float numberToInstantiate = numberElementSpawn;
         VisualInterraction elementReInstanciate = null;
-        if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player") && !isDestroyed)
         {
+            isDestroyed = true;
             for (int i = 0; i < SaveObjetManager.instance.listVisualInterraction.Count; i++)
             {
                 if (SaveObjetManager.instance.listVisualInterraction[i].foodDataKeep.foodData == elementToSpawn)
                 {
                     elementReInstanciate = SaveObjetManager.instance.listVisualInterraction[i];
-                    elementReInstanciate.transform.SetParent(transform);
                     elementReInstanciate.gameObject.SetActive(true);
-                    elementReInstanciate.gameObject.transform.localPosition = Vector3.zero;
+                    elementReInstanciate.gameObject.transform.localPosition = transform.position;
                     
                     Rigidbody rbInstance =  elementReInstanciate.GetComponent<Rigidbody>();
                     Vector3 randomDirection = Random.onUnitSphere;
-                    rbInstance.AddForce(randomDirection * speed, ForceMode.Impulse);
+                    rbInstance.AddForce(randomDirection * 2, ForceMode.Impulse);
                     
                     
                     SaveObjetManager.instance.listVisualInterraction.RemoveAt(i);
@@ -37,13 +38,12 @@ public class Package : DefaultFood
         
             for (int i = 0; i < numberToInstantiate; i++)
             {
-                GameObject foodPrefab = Instantiate(elementToSpawn.prefab, Vector3.zero ,Quaternion.identity, transform);
-                foodPrefab.transform.localPosition = Vector3.zero;
-                foodPrefab.transform.SetParent(null);
+                GameObject foodPrefab = Instantiate(elementToSpawn.prefab, Vector3.zero ,Quaternion.identity);
+                foodPrefab.transform.localPosition = transform.position;
                 
                 Rigidbody rbInstance = foodPrefab.GetComponent<Rigidbody>();
                 Vector3 randomDirection = Random.onUnitSphere;
-                rbInstance.AddForce(randomDirection * speed, ForceMode.Impulse);
+                rbInstance.AddForce(randomDirection * 1.9f, ForceMode.Impulse);
             }
             Destroy(gameObject);
         }
