@@ -37,22 +37,38 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 lastInteraction = newInteraction;
                 lastInteraction.ActiveOutLine();
+                TextManager.instance.AddText(lastInteraction.foodDataKeep.foodData.name);
+
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    PlayerHand.instance.TakeFood(lastInteraction.foodDataKeep.foodData);
-                    lastInteraction.GetStorageBool();
+                    if (lastInteraction.isNPC)
+                    {
+                        lastInteraction.npcManager.StartDialogue();
+                    }
+                    else
+                    {
+                        PlayerHand.instance.TakeFood(lastInteraction);
+                    }
+                    
+                    
+                    
+                    //lastInteraction.DesactiveFood();
                 }
             }
             else if (lastInteraction)
             {
                 lastInteraction.DesactiveOutLine();
+                TextManager.instance.AddText(" ");
+
                 lastInteraction = null;
             }
         }
         else if  (lastInteraction)
         {
             lastInteraction.DesactiveOutLine();
+            TextManager.instance.AddText(" ");
+
             lastInteraction = null;
         }
     }

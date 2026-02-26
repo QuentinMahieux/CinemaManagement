@@ -7,7 +7,9 @@ public class DefaultFood : MonoBehaviour
     public BoxCollider boxCollider;
     public FoodData foodData;
     
-    public void Start()
+    private bool inPlate = false;
+    
+    protected virtual void Start()
     {
         if (PlayerHand.instance == null)
         {
@@ -43,6 +45,25 @@ public class DefaultFood : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player"))
         {
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        }
+        if (collision.gameObject.CompareTag("Interactable"))
+        {
+            
+            
+            PlateFood plateFood = collision.gameObject.GetComponent<PlateFood>();
+            if (plateFood != null)
+            {
+                for (int i = 0; i < plateFood.listFoodToRecipe.Count; i++)
+                {
+                    if (!plateFood.listFoodToRecipe[i].inPlate && foodData == plateFood.listFoodToRecipe[i].foodData && !inPlate)
+                    {
+                        plateFood.listFoodToRecipe[i].inPlate = true;
+                        inPlate = true;
+                        plateFood.listFoodToRecipe[i].foodPrefab.SetActive(true);
+                        gameObject.SetActive(false);
+                    }
+                }
+            }
         }
     }
 }

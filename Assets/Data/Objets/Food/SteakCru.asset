@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: SteakCru
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Exemple1
+  name: Viande Cru
   prefab: {fileID: 8323963127625260304, guid: f393ada2c01bc4443b304f29bff354ed, type: 3}

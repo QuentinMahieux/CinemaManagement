@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: SteakPakage
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Exemple2
+  name: Carton de Viande
   prefab: {fileID: 1092834109370394708, guid: 7659d9d922d8fc7488ca5f4e89f38059, type: 3}

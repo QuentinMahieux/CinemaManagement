@@ -29,44 +29,24 @@ public class PlayerHand : MonoBehaviour
         }
     }
     
-    public void TakeFood(FoodData food)
+    public void TakeFood(VisualInterraction food)
     {
         if (actualFood)
         {
             return;
         }
-        VisualInterraction elementReInstanciate = null;
 
-        for (int i = 0; i < SaveObjetManager.instance.listVisualInterraction.Count; i++)
-        {
-            if (SaveObjetManager.instance.listVisualInterraction[i].foodDataKeep.foodData == food)
-            {
-                elementReInstanciate = SaveObjetManager.instance.listVisualInterraction[i];
-                SaveObjetManager.instance.listVisualInterraction.RemoveAt(i);
-                break;
-            }
-        }
-        
-        if (!elementReInstanciate)
-        {
-            GameObject foodPrefab = Instantiate(food.prefab, Vector3.zero ,Quaternion.identity, hand);
-            foodPrefab.transform.localPosition = Vector3.zero;
-        }
-        else
-        {
-            elementReInstanciate.gameObject.SetActive(true);
-            elementReInstanciate.gameObject.transform.SetParent(hand);
-            elementReInstanciate.gameObject.transform.localPosition = Vector3.zero;
+        food.gameObject.transform.SetParent(hand);
+        food.gameObject.transform.localPosition = Vector3.zero;
             
-            elementReInstanciate.foodDataKeep.boxCollider.enabled = false;
-            PlayerHand.instance.actualFood = elementReInstanciate.foodDataKeep;
+        food.foodDataKeep.boxCollider.enabled = false;
+        PlayerHand.instance.actualFood = food.foodDataKeep;
         
-            elementReInstanciate.foodDataKeep.rb.linearVelocity = Vector3.zero;
-            elementReInstanciate.foodDataKeep.rb.angularVelocity = Vector3.zero;
-            elementReInstanciate.foodDataKeep.rb.useGravity = false;
-            elementReInstanciate.foodDataKeep.rb.constraints = RigidbodyConstraints.FreezeAll;
+        food.foodDataKeep.rb.linearVelocity = Vector3.zero;
+        food.foodDataKeep.rb.angularVelocity = Vector3.zero;
+        food.foodDataKeep.rb.useGravity = false;
+        food.foodDataKeep.rb.constraints = RigidbodyConstraints.FreezeAll;
             
 
-        }
     }
 }

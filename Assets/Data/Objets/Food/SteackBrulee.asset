@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: SteackBrulee
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Exemple1
+  name: "Viande Cram\xE9"
   prefab: {fileID: 8323963127625260304, guid: 69fa4afe6e2c97345a2398e9010fe93c, type: 3}

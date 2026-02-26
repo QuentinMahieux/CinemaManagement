@@ -5,7 +5,7 @@ public class SaveObjetManager : MonoBehaviour
 {
     public static SaveObjetManager instance;
 
-    public List<VisualInterraction> listVisualInterraction;
+    // List<VisualInterraction> listVisualInterraction;
     
     void Awake()
     {

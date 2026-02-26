@@ -16,7 +16,7 @@ public class FoodCuite : DefaultFood
         isCooking = false;
     }
     
-    protected override void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         base.OnCollisionEnter(collision);
         if (collision.gameObject.CompareTag("Baking Tray"))

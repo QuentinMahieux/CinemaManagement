@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ public class VisualInterraction : MonoBehaviour
     [Tooltip("True: Infini, False: Récupére l'item")]
     public bool isStorage = false;
     public DefaultFood foodDataKeep;
+
+    [Header("NPC Settings")] 
+    public bool isNPC;
+    public NPCManager npcManager;
+    
     
 
     void Start()
@@ -39,13 +45,17 @@ public class VisualInterraction : MonoBehaviour
         meshRenderer.materials = originalMaterials;
     }
 
-    public void GetStorageBool()
+    public void DesactiveFood()
     {
-        if (!isStorage)
-        {
-            SaveObjetManager.instance.listVisualInterraction.Add(this);
-            gameObject.SetActive(false);
-        }
-        
+        gameObject.SetActive(false);
     }
+
+    public void SpeakToNPC()
+    {
+        if (isNPC && npcManager)
+        {
+            npcManager.StartDialogue();
+        }
+    }
+    
 }

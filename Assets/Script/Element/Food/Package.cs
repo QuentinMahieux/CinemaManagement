@@ -18,24 +18,6 @@ public class Package : DefaultFood
         if (!collision.gameObject.CompareTag("Player") && !isDestroyed)
         {
             isDestroyed = true;
-            for (int i = 0; i < SaveObjetManager.instance.listVisualInterraction.Count; i++)
-            {
-                if (SaveObjetManager.instance.listVisualInterraction[i].foodDataKeep.foodData == elementToSpawn)
-                {
-                    elementReInstanciate = SaveObjetManager.instance.listVisualInterraction[i];
-                    elementReInstanciate.gameObject.SetActive(true);
-                    elementReInstanciate.gameObject.transform.localPosition = transform.position;
-                    
-                    Rigidbody rbInstance =  elementReInstanciate.GetComponent<Rigidbody>();
-                    Vector3 randomDirection = Random.onUnitSphere;
-                    rbInstance.AddForce(randomDirection * 2, ForceMode.Impulse);
-                    
-                    
-                    SaveObjetManager.instance.listVisualInterraction.RemoveAt(i);
-                    numberToInstantiate--;
-                }
-            }
-        
             for (int i = 0; i < numberToInstantiate; i++)
             {
                 GameObject foodPrefab = Instantiate(elementToSpawn.prefab, Vector3.zero ,Quaternion.identity);
