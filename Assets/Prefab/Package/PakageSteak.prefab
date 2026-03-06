@@ -133,7 +133,7 @@ MonoBehaviour:
   boxCollider: {fileID: 8159810254812168261}
   foodData: {fileID: 11400000, guid: 75038f6c65a54e4418646bfc4f7f3198, type: 2}
   numberElementSpawn: 5
-  elementToSpawn: {fileID: 11400000, guid: 2a1693f1bb79a894d8ade8c60bb9efcb, type: 2}
+  elementToSpawn: {fileID: 11400000, guid: 753b03f5fac8bb944a8c13c089efb163, type: 2}
 --- !u!54 &2716592942213534584
 Rigidbody:
   m_ObjectHideFlags: 0

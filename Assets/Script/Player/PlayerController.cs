@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public float speed = 6;
+    public float bonusSpeedForUpdate = 0.2f;
+    private float speedBonus = 0;
     public float jumpForce = 5;
     
     [Header("Dash")]
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public bool isDashing;
     public bool isDashingCooldown;
     public bool isGrounded;
+    public bool isFly;
 
     void Awake()
     {
@@ -62,6 +65,15 @@ public class PlayerController : MonoBehaviour
             isDashing = true;
         }
 
+        if (!isFly)
+        {
+            speedBonus = 0;
+        }
+        else
+        {
+            speedBonus += bonusSpeedForUpdate ;
+        }
+
         if (isDashing)
         {
             
@@ -90,6 +102,7 @@ public class PlayerController : MonoBehaviour
         //Jump
         if(isJumping)
         {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJumping = false;
             isGrounded = false;
@@ -102,7 +115,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         //Move
-        rb.MovePosition(rb.position + moveDirection * (Time.deltaTime * speed));
+        rb.MovePosition(rb.position + moveDirection * (Time.deltaTime * (speed + speedBonus)));
         
         
         actualSpeed = (rb.position - lastSpeed).magnitude / Time.fixedDeltaTime;
@@ -114,6 +127,7 @@ public class PlayerController : MonoBehaviour
         if (!collision.gameObject.CompareTag("DontClimb"))
         {
             isGrounded = true;
+            isFly =  false;
         }
         else
         {
@@ -124,6 +138,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionExit(Collision collision)
     {
         isGrounded = false;
+        isFly = true;
     }
 
     IEnumerator DashDuration()
