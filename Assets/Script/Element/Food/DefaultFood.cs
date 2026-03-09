@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DefaultFood : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 6.5f;
     public Rigidbody rb;
     public BoxCollider boxCollider;
     public FoodData foodData;

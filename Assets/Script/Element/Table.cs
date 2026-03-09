@@ -18,7 +18,6 @@ public class Table : MonoBehaviour
     [Header("End Repas")] 
     public Transform spawnPlateSale;
     public float timeForEat = 2.5f;
-    public FoodData plateSale;
     public GameObject interfaceGameObject;
     
     [Header("Visual elements")] 
@@ -77,17 +76,19 @@ public class Table : MonoBehaviour
 
     public void RemoveClient(int score = 0)
     {
-        actualClientData = null;
         commandDontListen.SetActive(false);
         LevelManager.instance.tableLibres.Add(this);
         CommandeManager.instance.RemoveCommande(this);
         
         isWaiting = false;
 
-        if (score > 0)
+        if (score > 0 && actualClientData.plateSale)
         {
-            Instantiate(plateSale.prefab, spawnPlateSale.position, spawnPlateSale.rotation);
+            Instantiate(actualClientData.plateSale.prefab, spawnPlateSale.position, spawnPlateSale.rotation);
         }
+        
+        actualClientData = null;
+
     }
 
     void OnCollisionEnter(Collision collision)
