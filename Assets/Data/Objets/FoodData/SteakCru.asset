@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: SteakCru
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Viande Cru
+  name:
+  - text: 'chop steak '
+    language: {fileID: 11400000, guid: ce331176d60e9014a81d98ff01935e33, type: 2}
+  - text: "steak hach\xE9"
+    language: {fileID: 11400000, guid: 7b57e7c213a8c5244bf5522d5a4a742f, type: 2}
   prefab: {fileID: 1407908730586343744, guid: 5c768c62af435b5449f55a8be660982b, type: 3}

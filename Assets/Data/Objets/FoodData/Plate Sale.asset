@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: Plate Sale
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Assiete Sale
+  name:
+  - text: dirty plate
+    language: {fileID: 11400000, guid: ce331176d60e9014a81d98ff01935e33, type: 2}
+  - text: assiette sale
+    language: {fileID: 11400000, guid: 7b57e7c213a8c5244bf5522d5a4a742f, type: 2}
   prefab: {fileID: 1049209609689035176, guid: 4121acb754c010047927fa654ca79187, type: 3}

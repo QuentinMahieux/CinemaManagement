@@ -122,6 +122,73 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 32393af89364911419ff59e3e95a43cb, type: 3}
   m_PrefabInstance: {fileID: 289819554731493852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6193661819652578905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6424555281984282132}
+    m_Modifications:
+    - target: {fileID: 8499539528209504835, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_Name
+      value: TrailFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+--- !u!4 &3455365459232635836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 6193661819652578905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &9019524091677116363 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2945221956069530002, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 6193661819652578905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6819051818458626559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +279,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32393af89364911419ff59e3e95a43cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 256454644828925495}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32393af89364911419ff59e3e95a43cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3455365459232635836}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32393af89364911419ff59e3e95a43cb, type: 3}
       insertIndex: -1
@@ -300,6 +370,7 @@ MonoBehaviour:
   rb: {fileID: 5170782616867800558}
   boxCollider: {fileID: 2630636190662593539}
   foodData: {fileID: 11400000, guid: 753b03f5fac8bb944a8c13c089efb163, type: 2}
+  trail: {fileID: 9019524091677116363}
 --- !u!114 &4233020089454514964
 MonoBehaviour:
   m_ObjectHideFlags: 0

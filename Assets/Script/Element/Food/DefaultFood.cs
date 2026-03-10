@@ -7,6 +7,9 @@ public class DefaultFood : MonoBehaviour
     public BoxCollider boxCollider;
     public FoodData foodData;
     
+    [Header("Trail Renderer")]
+    public TrailRenderer trail;
+    
     private bool inPlate = false;
     
     protected virtual void Start()
@@ -19,13 +22,16 @@ public class DefaultFood : MonoBehaviour
         {
             boxCollider.enabled = false;
             PlayerHand.instance.actualFood = this;
-        
+            
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
+        trail.enabled = false;
     }
+
+   
 
     public void ThrowFood()
     {
@@ -36,6 +42,7 @@ public class DefaultFood : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
         
         boxCollider.enabled = true;
+        trail.enabled = true;
         
         rb.AddForce(FirstPersonCamera.instance.transform.forward * (speed + PlayerController.instance.actualSpeed),  ForceMode.Impulse);
     }
@@ -63,10 +70,12 @@ public class DefaultFood : MonoBehaviour
                 }
             }
         }
+        
+        trail.enabled = false;
     }
 
     public virtual void isTaking()
     {
-        
+        trail.enabled = false;
     }
 }

@@ -94,7 +94,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9f47fc54757748e4497b9f0464c0da60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 3890200101020807129}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
       insertIndex: -1
@@ -115,6 +118,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5873089269030961763}
   m_SourcePrefab: {fileID: 100100000, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
+--- !u!4 &1421606159919771368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
+  m_PrefabInstance: {fileID: 1454722294897903875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797323183418127442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
@@ -202,6 +210,7 @@ MonoBehaviour:
   rb: {fileID: 7313294415019644412}
   boxCollider: {fileID: 5507866272337703537}
   foodData: {fileID: 11400000, guid: 5e51d45e11fdb1c4d811f9952f3cef53, type: 2}
+  trail: {fileID: 7432313419006579630}
 --- !u!1 &2124606376096511873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8553417584757162366, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
@@ -251,4 +260,71 @@ MonoBehaviour:
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7416969812031155216, guid: b7ff1769e095c6a458aaa5b80dcfeab5, type: 3}
   m_PrefabInstance: {fileID: 1454722294897903875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5763312773257038396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1421606159919771368}
+    m_Modifications:
+    - target: {fileID: 8499539528209504835, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_Name
+      value: TrailFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+--- !u!4 &3890200101020807129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 5763312773257038396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &7432313419006579630 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2945221956069530002, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 5763312773257038396}
   m_PrefabAsset: {fileID: 0}

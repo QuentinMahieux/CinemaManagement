@@ -15,10 +15,17 @@ public class FoodCuite : DefaultFood
     [Header("Interface")]
     public Slider timeToHotSlider;
 
+    [Header("Particle Systeme")] 
+    public ParticleSystem[] particleHot;
+
     void OnEnable()
     {
         isCooking = false;
         timeToHotSlider.gameObject.SetActive(false);
+        foreach (ParticleSystem particle in particleHot)
+        {
+            particle.Stop();
+        }
     }
     
     private void OnCollisionStay(Collision collision)
@@ -31,6 +38,10 @@ public class FoodCuite : DefaultFood
             if (timeToHotSlider)
             {
                 timeToHotSlider.gameObject.SetActive(true);
+            }
+            foreach (ParticleSystem particle in particleHot)
+            {
+                particle.Play();
             }
         }
     }
@@ -69,6 +80,11 @@ public class FoodCuite : DefaultFood
         if(timeToHotSlider)
         {
             timeToHotSlider.gameObject.SetActive(false);
+        }
+
+        foreach (ParticleSystem particle in particleHot)
+        {
+            particle.Stop();
         }
     }
 }

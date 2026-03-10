@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     
     public LevelData levelSelect;
     
+    [Header("Language Settings")]
+    public LanguageData language;
+    
     
     private void Awake()
     {
@@ -41,5 +44,10 @@ public class GameManager : MonoBehaviour
         {
             MetroController.instance.SetCoordonee();
         }
+    }
+
+    public void ChangeLanguage(LanguageData newLanguage)
+    {
+        language = newLanguage;
     }
 }

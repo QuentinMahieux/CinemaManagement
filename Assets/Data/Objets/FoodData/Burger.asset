@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff660c81e9c52f4287cc383cc146271, type: 3}
   m_Name: Burger
   m_EditorClassIdentifier: Assembly-CSharp::FoodData
-  name: Pain a burger
+  name:
+  - text: buns
+    language: {fileID: 11400000, guid: ce331176d60e9014a81d98ff01935e33, type: 2}
+  - text: 'petit pain '
+    language: {fileID: 11400000, guid: 7b57e7c213a8c5244bf5522d5a4a742f, type: 2}
   prefab: {fileID: 5936670449386128558, guid: f9cedd060c14b62418800d5313847c25, type: 3}

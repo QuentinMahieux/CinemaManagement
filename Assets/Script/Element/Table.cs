@@ -23,9 +23,13 @@ public class Table : MonoBehaviour
     [Header("Visual elements")] 
     public TMP_Text textNumberTable;
     public Image clientIcon;
+    
+    [Header("Particle Systeme")]
+    public ParticleSystem particle;
 
     public void InstanciateTable(int newTableNumber)
     {
+        particle.Stop();
         isWaiting = false;
         tableNumber = newTableNumber.ToString();
         if (tableNumber.Length < 10)
@@ -70,8 +74,8 @@ public class Table : MonoBehaviour
         isWaiting = false;
         interfaceGameObject.SetActive(false);
         LevelManager.instance.AddScore(actualClientData.score);
-
         
+        particle.Play();
     }
 
     public void RemoveClient(int score = 0)
@@ -110,8 +114,8 @@ public class Table : MonoBehaviour
         plateFood.transform.localRotation = Quaternion.identity;
         plateFood.rb.linearVelocity = Vector3.zero;
         plateFood.rb.constraints = RigidbodyConstraints.FreezeRotation;
-        plateFood.rb.useGravity = false;
-        plateFood.boxCollider.enabled = false;
+        //plateFood.rb.useGravity = false;
+        plateFood.tag = "Untagged";
         
         EatClient();
         yield return new WaitForSeconds(time);

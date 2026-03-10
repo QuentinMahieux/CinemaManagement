@@ -23,6 +23,6 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 753b03f5fac8bb944a8c13c089efb163, type: 2}
   - numberIngredient: 0
     actualNumberIngredient: 0
-    ingredient: {fileID: 11400000, guid: f3cb47e922d877742a6c5040b8773364, type: 2}
+    ingredient: {fileID: 11400000, guid: a772c3b53a77d1c4cb7f56e048e1b870, type: 2}
   plateSale: {fileID: 11400000, guid: 5033b216a26ca2340af71b1b36993fad, type: 2}
   score: 20

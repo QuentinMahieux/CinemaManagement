@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5141208344541097061}
+  - {fileID: 810381866479406802}
   m_Father: {fileID: 415556263712172818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9001535567499309850
@@ -160,11 +161,14 @@ MonoBehaviour:
   rb: {fileID: 4276067188603305355}
   boxCollider: {fileID: 2544260026797430169}
   foodData: {fileID: 11400000, guid: 5033b216a26ca2340af71b1b36993fad, type: 2}
+  trail: {fileID: 6478194760445424293}
   tagTransformator: Lavabeau
   newFoodPrefab: {fileID: 1049209609689035176, guid: d47e7d34e3c1b9345825660d5f924700, type: 3}
   timeToHot: 0.1
   actualTimeToHot: 0
   isCooking: 0
+  timeToHotSlider: {fileID: 0}
+  particleHot: []
 --- !u!114 &6312767626965037257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,3 +325,70 @@ MonoBehaviour:
   meshRenderer: {fileID: 7251004283377967337}
   isStorage: 0
   foodDataKeep: {fileID: 3516799347959449300}
+--- !u!1001 &8158459894502124343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9188062197005187648}
+    m_Modifications:
+    - target: {fileID: 8499539528209504835, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_Name
+      value: TrailFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+--- !u!4 &810381866479406802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8793174986630997477, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 8158459894502124343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &6478194760445424293 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2945221956069530002, guid: eb6e9c16cf550304eb37e7ad7075aa22, type: 3}
+  m_PrefabInstance: {fileID: 8158459894502124343}
+  m_PrefabAsset: {fileID: 0}

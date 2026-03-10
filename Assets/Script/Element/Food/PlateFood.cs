@@ -11,10 +11,13 @@ public class PlateFood : DefaultFood
     public List<Recipe> listFoodToRecipe;
     public ClientData actualClientData;
     
+    [Header("Particle Effects")]
+    public ParticleSystem particleSystem;
 
     protected override void Start()
     {
         base.Start();
+        particleSystem.Stop();
         foreach (var food in listFoodToRecipe)
         {
             food.foodPrefab.SetActive(false);
@@ -28,6 +31,7 @@ public class PlateFood : DefaultFood
             if (RecipeCheck(listFoodToRecipe[i]))
             {
                 listFoodToRecipe[i].foodPrefab.SetActive(true);
+                particleSystem.Play();
                 actualClientData = listFoodToRecipe[i].recipe;
             }
             else
@@ -42,8 +46,8 @@ public class PlateFood : DefaultFood
         return recipe.recipe.ingredientType.All(requireIngrendint =>
         {
             var PlateIngredient = compatibleFoods.FirstOrDefault(i => requireIngrendint.ingredient == i.ingredient);
-            return (PlateIngredient != null && 
-                    PlateIngredient.actualNumberIngredient == requireIngrendint.numberIngredient);
+            return (PlateIngredient != null 
+                    && PlateIngredient.actualNumberIngredient == requireIngrendint.numberIngredient );
         });
     }
 }

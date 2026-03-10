@@ -38,7 +38,18 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 lastInteraction = newInteraction;
                 lastInteraction.ActiveOutLine();
-                TextManager.instance.AddText(lastInteraction.foodDataKeep.foodData.name);
+
+                string foodName = null;
+                foreach (StringTranslate translate in lastInteraction.foodDataKeep.foodData.name)
+                {
+                    if (translate.language == GameManager.instance.language)
+                    {
+                        foodName = translate.text;
+
+                    }
+                }
+                
+                TextManager.instance.AddText(foodName);
 
 
                 if (Input.GetMouseButtonDown(0))

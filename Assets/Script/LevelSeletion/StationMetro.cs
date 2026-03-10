@@ -18,7 +18,7 @@ public class StationMetro : MonoBehaviour
     [Header("Score")]
     public bool isWin;
     public Image[] stars = new Image[3];
-    public Color starColor;
+    public Sprite winSprite;
     
     void Start()
     {
@@ -45,7 +45,7 @@ public class StationMetro : MonoBehaviour
         {
             if (levelData.starsPallier[i] <= SaveLevel.instance.GetBestScore(levelData))
             {
-                stars[i].color = starColor;
+                stars[i].sprite = winSprite;
                 LevelWin();
             }
             else
