@@ -10,6 +10,6 @@ public class SettingsManager : MonoBehaviour
 
     public void ChangeFPS(TMP_InputField newvalue)
     {
-        GameManager.instance.ChangeFPS((int)newvalue.text);
+        GameManager.instance.ChangeFPS(int.Parse(newvalue.text));
     }
 }
