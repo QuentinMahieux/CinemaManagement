@@ -457,18 +457,6 @@ PrefabInstance:
       propertyPath: allLevels.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4322806386851542527, guid: 7cef18be78e72f34c8171ddcc87ab55d, type: 3}
-      propertyPath: languageList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4322806386851542527, guid: 7cef18be78e72f34c8171ddcc87ab55d, type: 3}
-      propertyPath: 'languageList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ce331176d60e9014a81d98ff01935e33, type: 2}
-    - target: {fileID: 4322806386851542527, guid: 7cef18be78e72f34c8171ddcc87ab55d, type: 3}
-      propertyPath: 'languageList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7b57e7c213a8c5244bf5522d5a4a742f, type: 2}
     - target: {fileID: 7372586424834414438, guid: 7cef18be78e72f34c8171ddcc87ab55d, type: 3}
       propertyPath: m_Name
       value: GameManager

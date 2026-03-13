@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541b2c7f5fa7c840b066352fc09bbf7, type: 3}
   m_Name: FrenchLangugeData
   m_EditorClassIdentifier: Assembly-CSharp::LanguageData
+  id: 1
   name: "Fran\xE7ais"
   flag: {fileID: 0}

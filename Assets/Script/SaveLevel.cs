@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,24 +20,29 @@ public class SaveLevel : MonoBehaviour
     }
     
     //Enregistre tout le niveau qui n'ont pas encore d'index
-    public void SetSave(LevelData level)
+    public void SetString(String name, int value = 0)
     {
-        if (!PlayerPrefs.HasKey(level.levelName))
+        if (!PlayerPrefs.HasKey(name))
         {
-            PlayerPrefs.SetInt(level.levelName, 0);
-            Debug.Log("💾 " + level.levelName + " has been saved.");
+            PlayerPrefs.SetInt(name, 0);
+            Debug.Log("💾 " + name + " has been saved.");
         }
         Save();
     }
     
     //Regarde si le score et meilleur que l'ancien score
-    public void NewScore(int score, LevelData level)
+    public void NewScore(string name, int score)
     {
-        if (score > PlayerPrefs.GetInt(level.levelName))
+        if (score > PlayerPrefs.GetInt(name))
         {
-            PlayerPrefs.SetInt(level.levelName, score);
-            Debug.Log(level.levelName + " best score: "  + score);
+            PlayerPrefs.SetInt(name, score);
+            Debug.Log(name + " best score: "  + score);
         }
+        Save();
+    }
+    public void NewInt(string name, int value)
+    {
+        PlayerPrefs.SetInt(name, value);
         Save();
     }
 
@@ -52,10 +58,10 @@ public class SaveLevel : MonoBehaviour
     }
     
     //Revoit le meillieux score pour un niveau
-    public int GetBestScore(LevelData level)
+    public int GetInt(String name)
     {
         Debug.Log("Return Best score");
-        return PlayerPrefs.GetInt(level.levelName);
+        return PlayerPrefs.GetInt(name);
     }
 
     public void SetSaveCoordonne(string coordoneeName, float coordoneeFloat)

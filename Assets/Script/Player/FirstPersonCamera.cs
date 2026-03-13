@@ -37,6 +37,8 @@ public class FirstPersonCamera : MonoBehaviour //Se script doit être placer sur
     }
     void Update()
     {
+        if (GameManager.instance.isPause) return;
+        
         float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
         

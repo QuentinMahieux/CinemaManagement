@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
         
         nameLevel.text = levelData.levelName;
         Debug.Log(levelData.levelName);
-        bestScore.text = SaveLevel.instance.GetBestScore(levelData).ToString();
+        bestScore.text = SaveLevel.instance.GetInt(levelData.levelName).ToString();
     }
 
     public void StopFollow()

@@ -24,7 +24,7 @@ public class StationMetro : MonoBehaviour
     {
         if (levelData)
         {
-            SaveLevel.instance.SetSave(levelData);
+            SaveLevel.instance.SetString(levelData.levelName);
             RestorSave();
         }
 
@@ -43,7 +43,7 @@ public class StationMetro : MonoBehaviour
     {
         for (int i = 0; i < stars.Length; i++)
         {
-            if (levelData.starsPallier[i] <= SaveLevel.instance.GetBestScore(levelData))
+            if (levelData.starsPallier[i] <= SaveLevel.instance.GetInt(levelData.levelName))
             {
                 stars[i].sprite = winSprite;
                 LevelWin();

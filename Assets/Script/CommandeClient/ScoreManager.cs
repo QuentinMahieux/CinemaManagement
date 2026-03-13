@@ -50,9 +50,9 @@ public class ScoreManager : MonoBehaviour
         
         textScore.text = score.ToString();
         
-        SaveLevel.instance.NewScore(score, levelData);
+        SaveLevel.instance.NewScore(levelData.levelName, score);
         
-        textBestScore.text = SaveLevel.instance.GetBestScore(levelData).ToString();
+        textBestScore.text = SaveLevel.instance.GetInt(levelData.levelName).ToString();
 
         for (int i = 0; i < textStars.Length; i++)
         {

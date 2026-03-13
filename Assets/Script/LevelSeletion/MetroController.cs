@@ -50,22 +50,22 @@ public class MetroController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && actualStation.D)
+        if (Input.GetKey(KeyCode.D) && actualStation.D)
         {
             SetDestination(actualStation.D);
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && actualStation.Q)
+        if (Input.GetKey(KeyCode.A) && actualStation.Q)
         {
             SetDestination(actualStation.Q);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && actualStation.Z)
+        if (Input.GetKey(KeyCode.W) && actualStation.Z)
         {
             SetDestination(actualStation.Z);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && actualStation.S)
+        if (Input.GetKey(KeyCode.S) && actualStation.S)
         {
             SetDestination(actualStation.S);
         }

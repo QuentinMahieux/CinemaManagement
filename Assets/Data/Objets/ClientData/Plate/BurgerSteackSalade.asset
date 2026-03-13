@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BurgerSteackSalade
   m_EditorClassIdentifier: Assembly-CSharp::ClientData
   id: 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a03befafeb918b846b07b3c4365b4946, type: 3}
   ingredientType:
   - numberIngredient: 1
     actualNumberIngredient: 0

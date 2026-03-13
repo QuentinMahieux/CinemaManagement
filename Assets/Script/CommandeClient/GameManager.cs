@@ -9,9 +9,18 @@ public class GameManager : MonoBehaviour
     
     public LevelData levelSelect;
     
-    [Header("Language Settings")]
-    public LanguageData language;
     
+    
+    [Header("Pause")]
+    public bool isPause;
+    
+    [Header("Settings")]
+    [Header("Language")]
+    public LanguageData language;
+    public List<LanguageData> languageList;
+
+    [Header("Performance")] 
+    public int currentFPS = 60;
     
     private void Awake()
     {
@@ -26,6 +35,28 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         Application.targetFrameRate = 60;
+    }
+
+    void Start()
+    {
+        //Language
+        if (language)
+        {
+            SaveLevel.instance.SetString("languageSetting", language.id);
+        }
+        int languageId = SaveLevel.instance.GetInt("languageSetting");
+        foreach (LanguageData l in languageList)
+        {
+            if (l.id == languageId)
+            {
+                language = l;
+            }
+        }
+        
+        //FPS
+        SaveLevel.instance.SetString("FPSSetting", currentFPS);
+        currentFPS = SaveLevel.instance.GetInt("FPSSetting");
+
     }
 
     public void StartLevel()
@@ -49,5 +80,12 @@ public class GameManager : MonoBehaviour
     public void ChangeLanguage(LanguageData newLanguage)
     {
         language = newLanguage;
+        SaveLevel.instance.NewInt( "languageSetting", language.id);
+    }
+
+    public void ChangeFPS(int newvalue)
+    {
+        SaveLevel.instance.NewInt("FPSSetting", newvalue);
+        currentFPS = newvalue;
     }
 }
