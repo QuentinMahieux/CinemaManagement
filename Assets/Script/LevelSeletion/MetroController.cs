@@ -39,7 +39,7 @@ public class MetroController : MonoBehaviour
             actualStation = other.gameObject.GetComponent<StationMetro>();
 
             CameraFollow.instance.gameObject.SetActive(true);
-            CameraFollow.instance.StartFollow(actualStation.transform, actualStation.levelData);
+            CameraFollow.instance.StartFollow(actualStation.transform, actualStation.levelData, actualStation);
         }
     }
 

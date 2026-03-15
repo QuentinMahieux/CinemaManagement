@@ -13,45 +13,37 @@ MonoBehaviour:
   m_Name: Trocadero
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelName: Trocadero
-  sprite: {fileID: 21300000, guid: eb96395cf31250044a3bc2d5ebfe6d7d, type: 3}
+  sprite: {fileID: 0}
   clients:
-  - {fileID: 11400000, guid: eee291456253c6042a16bcbe20c1df6e, type: 2}
   - {fileID: 11400000, guid: d3f15169adcfef8469971f82f39372e6, type: 2}
-  - {fileID: 11400000, guid: eee291456253c6042a16bcbe20c1df6e, type: 2}
+  - {fileID: 11400000, guid: fc31bee915178dd43a3b13a50a543b9c, type: 2}
+  - {fileID: 11400000, guid: fc31bee915178dd43a3b13a50a543b9c, type: 2}
+  - {fileID: 11400000, guid: fc31bee915178dd43a3b13a50a543b9c, type: 2}
   numberDefaultClient: 1
   courbeClientSpawn:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.45679998
-      value: 14.958441
-      inSlope: -0.0037516581
-      outSlope: -0.0037516581
+      time: -2.5890298
+      value: 11.35747
+      inSlope: -0.06638812
+      outSlope: -0.06638812
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.284475
+      outWeight: 0.083608605
     - serializedVersion: 3
-      time: 92.03252
-      value: 9.867758
-      inSlope: -0.018428527
-      outSlope: -0.018428527
+      time: 181.37234
+      value: 4.834258
+      inSlope: 0.002357332
+      outSlope: 0.002357332
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1748297
-      outWeight: 0.12210091
-    - serializedVersion: 3
-      time: 182.35681
-      value: 5.7877274
-      inSlope: 0.015273996
-      outSlope: 0.015273996
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14167835
+      inWeight: 0.11495944
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  waitTimeClient: 45
+  waitTimeClient: 50
   timerLevel: 180
-  starsPallier: 320000004600000064000000
+  starsPallier: 3c0000006e00000096000000

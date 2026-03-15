@@ -13,9 +13,17 @@ public class CameraFollow : MonoBehaviour
 
     [Header("Interface")] 
     public TMP_Text nameLevel;
+    
+    [Header("Start Game")]
+    public GameObject startGameInterface;
     public Image imageLevel;
     public TMP_Text bestScore;
     public TMP_Text nextScore;
+    
+    [Header("Lock")]
+    public GameObject lockInterface;
+    public Image imageLock;
+    public TMP_Text stepLock;
     
     
     private void Awake()
@@ -37,12 +45,23 @@ public class CameraFollow : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void StartFollow(Transform target, LevelData levelData)
+    public void StartFollow(Transform target, LevelData levelData, StationMetro station)
     {
         mainCamera.gameObject.SetActive(false);
         cinemachineCamera.Follow = target;
+
+        RefreshInterface();
+        nameLevel.text = levelData.levelName;
+
+        if (station.isLock)
+        {
+            AffichageInterfaceLock(station);
+        }
+        else
+        {
+            AfficheInterfaceStart(levelData);
+        }
         
-        RefreshInterface(levelData);
     }
 
     public void StopFollow()
@@ -55,10 +74,25 @@ public class CameraFollow : MonoBehaviour
     {
         GameManager.instance.StartLevel();
     }
-    
-    void RefreshInterface(LevelData levelData)
+
+    void RefreshInterface()
     {
-        nameLevel.text = levelData.levelName;
+        startGameInterface.gameObject.SetActive(false);
+        lockInterface.gameObject.SetActive(false);
+    }
+
+    void AffichageInterfaceLock(StationMetro station)
+    {
+        lockInterface.gameObject.SetActive(true);
+
+        stepLock.text = PointCointer.instance.numberStar + "/" + station.nbrUnlock;
+    }
+    
+    void AfficheInterfaceStart(LevelData levelData)
+    {
+        startGameInterface.gameObject.SetActive(true);
+
+        
         imageLevel.sprite = levelData.sprite;
         
 

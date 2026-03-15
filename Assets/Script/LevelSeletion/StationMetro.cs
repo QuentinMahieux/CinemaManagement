@@ -26,21 +26,41 @@ public class StationMetro : MonoBehaviour
     
     void Start()
     {
+        
+        if (isWin) LevelWin();
+
+        
+        
         if (levelData)
         {
             SaveLevel.instance.SetString(levelData.levelName);
             RestorSave();
         }
 
-        if (isWin)
-        {
-            LevelWin();
-        }
+        
     }
 
     void Update()
     {
-        
+        if (isLock)
+        {
+            if (nbrUnlock <= PointCointer.instance.numberStar)
+            {
+                isLock = false;
+                for (int i = 0; i < stars.Length; i++)
+                {
+                    stars[i].gameObject.SetActive(true);
+                }
+                RestorSave();
+            }
+            else
+            {
+                for (int i = 0; i < stars.Length; i++)
+                {
+                    stars[i].gameObject.SetActive(false);
+                }
+            }
+        }
     }
 
     void RestorSave()
@@ -49,7 +69,9 @@ public class StationMetro : MonoBehaviour
         {
             if (levelData.starsPallier[i] <= SaveLevel.instance.GetInt(levelData.levelName))
             {
+                stars[i].gameObject.SetActive(true);
                 stars[i].sprite = winSprite;
+                PointCointer.instance.AddPoint(1);
                 LevelWin();
             }
             else
