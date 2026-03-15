@@ -11,6 +11,7 @@ TagManager:
   - Lavabeau
   - StationMetro
   - Rock
+  - Treadmill
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.instance.isPause) return;
+        //if(GameManager.instance.isPause) return;
         
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;

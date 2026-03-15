@@ -122,25 +122,6 @@ public class PlayerController : MonoBehaviour
         lastSpeed = rb.position;
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        if (!collision.gameObject.CompareTag("DontClimb"))
-        {
-            isGrounded = true;
-            isFly =  false;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-        isFly = true;
-    }
-
     IEnumerator DashDuration()
     {
         rb.AddForce(moveDirection * dashForce, ForceMode.Impulse);
