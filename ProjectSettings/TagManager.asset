@@ -11,6 +11,7 @@ TagManager:
   - Lavabeau
   - StationMetro
   - Rock
+  - MoveCarpet
   layers:
   - Default
   - TransparentFX

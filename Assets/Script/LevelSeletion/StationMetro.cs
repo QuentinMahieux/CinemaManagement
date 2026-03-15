@@ -20,6 +20,10 @@ public class StationMetro : MonoBehaviour
     public Image[] stars = new Image[3];
     public Sprite winSprite;
     
+    [Header(("Lock"))]
+    public bool isLock;
+    public int nbrUnlock;
+    
     void Start()
     {
         if (levelData)

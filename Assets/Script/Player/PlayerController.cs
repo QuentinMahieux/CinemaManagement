@@ -124,21 +124,11 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("DontClimb"))
+        if (collision.gameObject.CompareTag("MoveCarpet"))
         {
-            isGrounded = true;
-            isFly =  false;
+            Vector3 carpetForce = collision.transform.right * GameManager.instance.moveCarpetSpeed;
+            rb.linearVelocity = new Vector3(carpetForce.x, rb.linearVelocity.y, carpetForce.z);
         }
-        else
-        {
-            isGrounded = false;
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-        isFly = true;
     }
 
     IEnumerator DashDuration()

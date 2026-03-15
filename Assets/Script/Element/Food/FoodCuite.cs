@@ -1,11 +1,12 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FoodCuite : DefaultFood
 {
     [Header("Cooking Food")] 
-    public string tagTransformator = "Baking Tray";
+    public string[] tagTransformator;
     public GameObject newFoodPrefab;
 
     public float timeToHot;
@@ -30,10 +31,10 @@ public class FoodCuite : DefaultFood
         }
     }
     
-    private void OnCollisionStay(Collision collision)
+    public override void OnCollisionStay(Collision collision)
     {
-        base.OnCollisionEnter(collision);
-        if (collision.gameObject.CompareTag(tagTransformator))
+        base.OnCollisionStay(collision);
+        if (tagTransformator.Contains(collision.gameObject.tag))
         {
             isCooking = true;
             
@@ -51,7 +52,7 @@ public class FoodCuite : DefaultFood
 
     private void OnCollisionExit(Collision other)
     {
-        if (isCooking && !other.gameObject.CompareTag(tagTransformator))
+        if (isCooking && !tagTransformator.Contains(other.gameObject.tag))
         {
             isCooking = false;
         }

@@ -256,7 +256,8 @@ MonoBehaviour:
   boxCollider: {fileID: 2572482039641103167}
   foodData: {fileID: 11400000, guid: 2a1693f1bb79a894d8ade8c60bb9efcb, type: 2}
   trail: {fileID: 3927777631789123256}
-  tagTransformator: Baking Tray
+  tagTransformator:
+  - Baking Tray
   newFoodPrefab: {fileID: 1407908730586343744, guid: d3d76a46cf467da40a5482f5e39f87e9, type: 3}
   timeToHot: 6
   actualTimeToHot: 0

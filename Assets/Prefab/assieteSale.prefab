@@ -163,7 +163,9 @@ MonoBehaviour:
   boxCollider: {fileID: 2544260026797430169}
   foodData: {fileID: 11400000, guid: 5033b216a26ca2340af71b1b36993fad, type: 2}
   trail: {fileID: 6478194760445424293}
-  tagTransformator: Lavabeau
+  tagTransformator:
+  - Lavabeau
+  - MoveCarpet
   newFoodPrefab: {fileID: 1049209609689035176, guid: d47e7d34e3c1b9345825660d5f924700, type: 3}
   timeToHot: 0.1
   actualTimeToHot: 0

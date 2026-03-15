@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(DecompteToStart());
     }
 
-    void Update()
+    protected virtual void Update()
     {
         actualTime += Time.deltaTime;
         if (actualTime >= levelData.timerLevel)

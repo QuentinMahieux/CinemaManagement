@@ -51,7 +51,7 @@ public class DefaultFood : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("MoveCarpet"))
         {
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
@@ -76,6 +76,15 @@ public class DefaultFood : MonoBehaviour
         trail.enabled = false;
     }
 
+    public virtual void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MoveCarpet"))
+        {
+            rb.constraints =  RigidbodyConstraints.None;
+            rb.linearVelocity = collision.transform.up * GameManager.instance.moveCarpetSpeed;
+        }
+    }
+    
     public virtual void isTaking()
     {
         trail.enabled = false;

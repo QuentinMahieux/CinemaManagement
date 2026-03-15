@@ -17,6 +17,7 @@ public class Table : MonoBehaviour
 
     [Header("End Repas")] 
     public Transform spawnPlateSale;
+    public Transform spawnPlate;
     public float timeForEat = 2.5f;
     public GameObject interfaceGameObject;
     
@@ -107,9 +108,21 @@ public class Table : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Interactable") && actualClientData != null)
+        {
+            PlateFood plateFood = other.GetComponent<PlateFood>();
+            if (plateFood != null && plateFood.actualClientData.id == actualClientData.id)
+            {
+                StartCoroutine(TimeToEat(timeForEat, plateFood));
+            }
+        }
+    }
+
     IEnumerator TimeToEat(float time, PlateFood plateFood)
     {
-        plateFood.transform.parent = spawnPlateSale;
+        plateFood.transform.parent = spawnPlate;
         plateFood.transform.localPosition = Vector3.zero;
         plateFood.transform.localRotation = Quaternion.identity;
         plateFood.rb.linearVelocity = Vector3.zero;

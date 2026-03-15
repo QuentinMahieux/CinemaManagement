@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     
     public LevelData levelSelect;
     
-    
-    
-    [Header("Pause")]
-    public bool isPause;
+    [HideInInspector] public bool isPause;
+
+    [Header("Element valeur")] 
+    public float moveCarpetSpeed = 4;
     
     [Header("Settings")]
     [Header("Language")]
